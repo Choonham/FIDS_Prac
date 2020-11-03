@@ -65,19 +65,17 @@
             <div id="map_text">
                 Map
             </div>
-            <div id="map">
-            </div>
-            <svg width="100%" id="mapBox">
+            <svg width="100%" id="map">
                 <rect id="map_back" width="100%" height="800px">
                 </rect>
             </svg>
+            <div id="mapApi" style="width:80%;height:730px; padding:10px; position: absolute; left: 10%; top:20px; z-index: 2"></div>
             <script>
-                var container = document.getElementById('map');
+                var container = document.getElementById('mapApi');
                 var options = {
-                    center: new kakao.maps.LatLng(37.3744863112487, 126.63321945761774),
+                    center: new kakao.maps.LatLng( 37.374, 126.633),
                     level: 13
                 };
-
                 var map = new kakao.maps.Map(container, options);
             </script>
         </div>
