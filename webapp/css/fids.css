@@ -23,11 +23,13 @@
     position: absolute;
     width: 100%;
 }
-#mapBox{
+#map{
+    position: absolute;
+    left:1px;
+    top:1px;
     fill: rgba(255,255,255,0.29);
     height: 800px;
     z-index: 1;
-    margin-top: -200px;
 }
 #clock{
     width: 240px;

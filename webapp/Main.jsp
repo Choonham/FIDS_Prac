@@ -78,48 +78,46 @@
                     level: 13
                 };
                 var map = new kakao.maps.Map(container, options);
-
                 var positions = [
                     {
-                        title: '인천 공항',
-                        content:'<a style="font-family: 나눔스퀘어; text-align: center">인천 공항</a>',
-                        latlng: new kakao.maps.LatLng(37.4625, 126.439167),
-                        toFIDS: "fids.jsp?airportNo1"
+                        title: 'FIDS.jsp?airportNo=1',
+                        content:'<a style="font-family: 나눔스퀘어; text-align: center" href="FIDS.jsp?FIDSNo1">인천 공항 FIDS</a>',
+                        latlng: new kakao.maps.LatLng(37.4625, 126.439167)
                     },
                     {
-                        title: '김포 공항',
-                        content:'<a style="font-family: 나눔스퀘어; text-align: center">김포 공항</a>',
-                        latlng: new kakao.maps.LatLng(37.558056, 126.790556),
-                        toFIDS: "fids.jsp?airportNo2"
+                        title: 'FIDS.jsp?airportNo=2',
+                        content:'<a style="font-family: 나눔스퀘어; text-align: center" href="FIDS.jsp?FIDSNo2">김포 공항 FIDS</a>',
+                        latlng: new kakao.maps.LatLng(37.558056, 126.790556)
                     },
                     {
-                        title: '김해 공항',
-                        content:'<a style="font-family: 나눔스퀘어; text-align: center">김해 공항</a>',
-                        latlng: new kakao.maps.LatLng(35.179444, 128.938056),
-                        toFIDS: "fids.jsp?airportNo3"
+                        title: 'FIDS.jsp?airportNo=3',
+                        content:'<a style="font-family: 나눔스퀘어; text-align: center" href="FIDS.jsp?FIDSNo3">김해 공항 FIDS</a>',
+                        latlng: new kakao.maps.LatLng(35.179444, 128.938056)
 
                     },
                     {
-                        title: '제주 공항',
-                        content:'<a style="font-family: 나눔스퀘어 text-align: center">제주 공항</a>',
-                        latlng: new kakao.maps.LatLng(33.5113, 126.4930),
-                        toFIDS: "fids.jsp?airportNo4"
+                        title: 'FIDS.jsp?airportNo=4',
+                        content:'<a style="font-family: 나눔스퀘어 text-align: center" href="FIDS.jsp?FIDSNo4">제주 공항 FIDS</a>',
+                        latlng: new kakao.maps.LatLng(33.5113, 126.4930)
                     }
                 ];
-                for (var i = 0; i < positions.length; i ++) {
-
+                for (let i = 0; i < positions.length; i ++) {
                     // 마커를 생성합니다
                     var marker = new kakao.maps.Marker({
                         map: map,
                         position: positions[i].latlng,
                         title : positions[i].title,
-                        toFIDS: positions[i].toFIDS
+                        clickable: true
                     });
                     var infowindow = new kakao.maps.InfoWindow({
                         content: positions[i].content // 인포윈도우에 표시할 내용
                     });
+                    kakao.maps.event.addListener(marker, 'click', function() {
+                        window.location.href = positions[i].title;
+                    });
                     kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
                     kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
                 }
                 function makeOverListener(map, marker, infowindow) {
                     return function() {
@@ -131,6 +129,11 @@
                 function makeOutListener(infowindow) {
                     return function() {
                         infowindow.close();
+                    };
+                }
+                function ClickListener(toFIDS){
+                    return function () {
+                        window.location.href = toFIDS;
                     };
                 }
             </script>
