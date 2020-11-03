@@ -1,574 +1,129 @@
-.mediaViewInfo {
-    --web-view-name: FIDS;
-    --web-view-id: FIDS;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-}
-:root {
-    --web-view-ids: FIDS;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-}
-#FIDS {
-    position: absolute;
-    width: 1920px;
-    height: 1080px;
-    background-color: rgba(255,255,255,1);
-    overflow: hidden;
-    --web-view-name: FIDS;
-    --web-view-id: FIDS;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-}
-@keyframes fadein {
-
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-
-}
-#photo-1542296332-2e4473faf563 {
-    position: absolute;
-    width: 2457px;
-    height: 1634px;
-    left: -163px;
-    top: 0px;
-    overflow: -moz-hidden-unscrollable;
-}
-#ICON {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: 'Main.jsp';
-    cursor: pointer;
-}
-#_1 {
-    opacity: 0.45;
-    fill: transparent;
-}
-._1 {
-    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.161));
-    position: absolute;
-    overflow: visible;
-    width: 830px;
-    height: 145px;
-    left: 534px;
-    top: -2px;
-}
-#AirPort_1 {
-    filter: drop-shadow(5px 30px 15px rgba(0, 0, 0, 0.161));
-    left: 795px;
-    top: 28px;
-    position: absolute;
-    overflow: visible;
-    width: 331px;
-    white-space: nowrap;
+#MainTitle{
+    font-family: "Perpetua Titling MT";
+    font-size:60px;
+    color: white;
     text-align: center;
-    font-family: Perpetua Titling MT;
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 60px;
-    color: rgba(255,255,255,1);
+    filter: drop-shadow(10px 15px 6px rgba(0, 0, 0, 0.161));
+    -webkit-text-stroke: 4px #000;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-decoration-style: double ;
 }
-#_2 {
+.background{
+    background-image: url("../img/background.png");
+    background-position-x:-400px;
+    background-repeat: no-repeat;
+    overflow: -moz-scrollbars-vertical;
+}
+.background::before{
+    background-color: rgba(0, 0, 0, 0.01);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#mapBox{
     fill: rgba(255,255,255,0.29);
+    height: 800px;
+    z-index: 1;
+    margin-top: -200px;
 }
-._2 {
+#clock{
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/clock.png");
+    background-size: cover;
+    border: 3px solid #ff6f00;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+    inset 0 -15px 15px rgba(255,255,255,0.05),
+    0 15px 15px rgba(0,0,0,0.3),
+    inset 0 15px 15px rgba(0,0,0,0.3);
+}
+#clock:before{
+    margin-top:10px;
+    content: " ";
+    position:absolute;
+    width:15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+#clock.hour,
+#clock.min,
+#clock,sec{
+    position:relative;
+}
+#clock.hour, .hr{
+    position:relative;
+    left: 131%;
+    width: 160px;
+    height: 160px;
+}
+#clock.min, .mn{
+    left: 18.5%;
+    width: 190px;
+    height: 190px;
+}
+#clock.sec, .sc{
+    left:-76%;
+    width: 230px;
+    height: 230px;
+}
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position:relative;
+    border-radius: 50%;
+    margin-top: 5%;
+}
+.hr:before{
+    content: " ";
     position: absolute;
-    overflow: visible;
-    width: 1364px;
-    height: 851px;
-    left: 278px;
-    top: 235px;
+    width: 6px;
+    height: 40px;
+    background: #bd2130;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+    margin-top: 35px;
 }
-#_1_n {
-    filter: blur(30px);
-    fill: transparent;
-    stroke: rgba(112,112,112,1);
-    stroke-width: 2px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._1_n {
-    filter: drop-shadow(0px 15px 6px rgba(0, 0, 0, 0.161));
-    overflow: visible;
+.mn:before{
+    content: " ";
     position: absolute;
-    width: 588.007px;
-    height: 28.007px;
-    left: 676px;
-    top: 97px;
-    transform: matrix(1,0,0,1,0,0);
+    width: 4px;
+    height: 60px;
+    background: #3d3d3d;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+    margin-top: 35px;
 }
-#_ {
-    left: 1693px;
-    top: 91px;
+.sc:before{
+    content: " ";
     position: absolute;
-    overflow: visible;
-    width: 175px;
-    white-space: nowrap;
-    text-align: center;
-    font-family: "08서울남산체 B";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 45px;
-    color: rgba(255,255,255,1);
+    width: 2px;
+    height: 100px;
+    background: #ffffff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+    margin-top: 35px;
 }
-#_2_p {
-    fill: rgba(18,51,183,0.2);
+#map_text{
+    margin-top: 100px;
+    font-family: "Perpetua Titling MT";
+    font-size: 55px;
+    -webkit-text-fill-color:transparent;
+    color: white;
+    text-align: left;
+    filter: drop-shadow(10px 15px 6px rgba(10, 10, 0, 0.161));
+    -webkit-text-stroke: 3px #525252;
+    position: relative;
+    top: -160px;
+    left: -30px;
+    z-index: 2;
 }
-._2_p {
-    position: absolute;
-    overflow: visible;
-    width: 262px;
-    height: 262px;
-    left: 1658px;
-    top: 0px;
-}
-#ID20201027 {
-    filter: drop-shadow(5px 30px 15px rgba(0, 0, 0, 0.161));
-    left: 278px;
-    top: 186px;
-    position: absolute;
-    overflow: visible;
-    width: 323px;
-    white-space: nowrap;
-    text-align: center;
-    font-family: Sitka Text;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    color: rgba(18,23,23,1);
-}
-#__3 {
-    opacity: 0.78;
-    mix-blend-mode: multiply;
-    position: absolute;
-    width: 1369px;
-    height: 815px;
-    left: 275.5px;
-    top: 265.5px;
-    overflow: hidden;
-}
-#__3_0 {
-    position: absolute;
-    width: 1364px;
-    height: 818px;
-    left: 2.5px;
-    top: 2.5px;
-    overflow: visible;
-}
-#_8 {
-    fill: rgba(65,65,65,1);
-}
-._8 {
-    position: absolute;
-    overflow: visible;
-    width: 1364px;
-    height: 818px;
-    left: 0px;
-    top: 0px;
-}
-#_4 {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4 {
-    overflow: visible;
-    position: absolute;
-    width: 1364.011px;
-    height: 8px;
-    left: 279px;
-    top: 335px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_v {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_v {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 394px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_w {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_w {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 455px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_x {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_x {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 516px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_y {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_y {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 577px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_z {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_z {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 638px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_ {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_ {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 699px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_ba {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_ba {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 766px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_bb {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_bb {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 827px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_bc {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_bc {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 888px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_bd {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_bd {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 949px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_be {
-    fill: transparent;
-    stroke: rgba(238,221,117,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._4_be {
-    overflow: visible;
-    position: absolute;
-    width: 1364.022px;
-    height: 11px;
-    left: 278px;
-    top: 1010px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5 {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5 {
-    overflow: visible;
-    position: absolute;
-    width: 5px;
-    height: 678px;
-    left: 472.8px;
-    top: 336px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5_ {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5_ {
-    overflow: visible;
-    position: absolute;
-    width: 5px;
-    height: 678px;
-    left: 669.8px;
-    top: 336px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5_ba {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5_ba {
-    overflow: visible;
-    position: absolute;
-    width: 5px;
-    height: 678px;
-    left: 866.8px;
-    top: 336px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5_bb {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5_bb {
-    overflow: visible;
-    position: absolute;
-    width: 6.713px;
-    height: 675.513px;
-    left: 1063.8px;
-    top: 338.5px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5_bc {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5_bc {
-    overflow: visible;
-    position: absolute;
-    width: 5.705px;
-    height: 675.505px;
-    left: 1260.8px;
-    top: 338.5px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_5_bd {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._5_bd {
-    overflow: visible;
-    position: absolute;
-    width: 5.302px;
-    height: 675.502px;
-    left: 1457.5px;
-    top: 338.5px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#ID1_Airport_FIDS {
-    filter: drop-shadow(2px 15px 6px rgba(4, 160, 19, 0.161));
-    left: 679px;
-    top: 274px;
-    position: absolute;
-    overflow: visible;
-    width: 465px;
-    white-space: nowrap;
-    text-align: center;
-    font-family: Sitka Text;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    color: rgba(34,173,168,1);
-}
-#_6 {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._6 {
-    overflow: visible;
-    position: absolute;
-    width: 5px;
-    height: 678px;
-    left: 277.8px;
-    top: 336px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_7 {
-    fill: transparent;
-    stroke: rgba(255,229,129,1);
-    stroke-width: 5px;
-    stroke-linejoin: miter;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
-}
-._7 {
-    overflow: visible;
-    position: absolute;
-    width: 5.302px;
-    height: 675.502px;
-    left: 1641.5px;
-    top: 342.5px;
-    transform: matrix(1,0,0,1,0,0);
-}
-#_4_bf {
-    fill: transparent;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: 'Manager.jsp';
-    cursor: pointer;
-}
-._4_bf {
-    position: absolute;
-    overflow: visible;
-    width: 47px;
-    height: 42px;
-    left: 40px;
-    top: 445px;
-}
+
