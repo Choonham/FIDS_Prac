@@ -87,6 +87,12 @@
             <div id="FIDS_table">
                 <table class="table table-striped" id="table">
                     <thead>
+                        <tr style="color: #ffd500; font-size: 35px">
+                            <th>
+                                <img src="img/DepartureIcon.jpg">
+                            </th>
+                            <th colspan="11">Departure</th>
+                        </tr>
                         <tr style="color: #b8daff">
                             <th>Time</th>
                             <th colspan="6">Destination</th>
