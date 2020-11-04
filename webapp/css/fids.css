@@ -25,11 +25,26 @@
 }
 #map{
     position: absolute;
-    left:1px;
     top:1px;
-    fill: rgba(255,255,255,0.29);
-    height: 800px;
+    width: 100%;
+    align-items: center;
+    fill: rgba(255,255,255,0.5);
+    height: 600px;
     z-index: 1;
+}
+#FIDS_table{
+    position: absolute;
+    width: 98%;
+    top: 10%;
+    left: 2%;
+    background: rgba(31, 31, 187,1);
+    height: 560px;
+    align-items: center;
+    z-index: 2;
+}
+#table{
+    color: white;
+    font-family: "08서울남산체 B";
 }
 #clock{
     width: 240px;
