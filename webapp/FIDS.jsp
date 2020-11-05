@@ -115,7 +115,7 @@
                         for(int i = 0; i<=10; i++){
                             if(i%2==0) Class = "class=\"bg-primary\"";
                             else Class = null;
-                            if(AirportNo == 1) {
+                            if(AirportNo == 4) {
                                 FIDS_Info_AL = FIDS_Info_Map.get(i);
                                 %>
                         <tr>
@@ -128,7 +128,7 @@
                             <td id="Delay<%=i%>" <%=Class%>>ExData: <%=i%></td>
                         </tr>
                     <%
-                            }
+                            } else{
                     %>
                         <tr>
                             <td id="departTime<%=i%>" <%=Class%>>ExData: <%=i%></td>
@@ -139,11 +139,13 @@
                             <td id="Status<%=i%>" <%=Class%>>ExData: <%=i%></td>
                             <td id="Delay<%=i%>" <%=Class%>>ExData: <%=i%></td>
                         </tr>
-                    <%}%>
+                    <%}
+                    }
+                    %>
                     </tbody>
                 </table>
             </div>
-            <script>
+            <script type="text/javascript">
                 var date = new Date();
                 document.getElementById("map_text").innerHTML = getRecentDate();
                 function getRecentDate(){
