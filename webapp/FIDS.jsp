@@ -37,7 +37,8 @@
             </nav>
         </div>
         <div class="col-8" id="MainTitle">
-            <% if(AirportNo == 1) {
+            <%  IncheonAirport Info = new IncheonAirport();
+                if(AirportNo == 1) {
                 title = "인천공항 FIDS";
             } else if(AirportNo == 2) {
                 title = "김포공항 FIDS";
@@ -82,6 +83,7 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <div id="map_text">
+                <%=Info.getDate()%>
             </div>
             <svg width="100%" id="map">
                 <rect id="map_back" width="100%" height="800px">
@@ -108,7 +110,6 @@
                     </thead>
                     <tbody>
                     <%  String Class = null;
-                        IncheonAirport Info = new IncheonAirport();
                         ArrayList<String> FIDS_Info_AL = new ArrayList<>();
                         HashMap<Integer, ArrayList<String>> FIDS_Info_Map = new HashMap<>();
                         FIDS_Info_Map = Info.getFIDS();
@@ -145,22 +146,6 @@
                     </tbody>
                 </table>
             </div>
-            <script type="text/javascript">
-                var date = new Date();
-                document.getElementById("map_text").innerHTML = getRecentDate();
-                function getRecentDate(){
-                    var dt = new Date();
-
-                    var recentYear = dt.getFullYear();
-                    var recentMonth = dt.getMonth() + 1;
-                    var recentDay = dt.getDate();
-
-                    if(recentMonth < 10) recentMonth = "0" + recentMonth;
-                    if(recentDay < 10) recentDay = "0" + recentDay;
-
-                    return recentYear + "-" + recentMonth + "-" + recentDay;
-                }
-            </script>
         </div>
     </div>
 </div>

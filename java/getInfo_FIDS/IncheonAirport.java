@@ -57,6 +57,13 @@ public class IncheonAirport {
         }
     }
 
+    public String getDate(){
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String Today = formatter.format(date);
+        return Today;
+    }
+
     public static String getCurrTime(){
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("HHmm");
