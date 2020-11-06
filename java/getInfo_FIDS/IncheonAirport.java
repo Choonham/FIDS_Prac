@@ -41,16 +41,16 @@ public class IncheonAirport {
                 ArrayList<String> FIDS_Info_AL = new ArrayList<>();
                 if(e.getElementsByTagName("std").getLength()>0)
                     time = e.getElementsByTagName("std").item(0).getTextContent();
-                else gate = "정보 없음";
+                else time = "정보 없음";
                 if(e.getElementsByTagName("arrivedKor").getLength()>0)
                     destination = e.getElementsByTagName("arrivedKor").item(0).getTextContent();
-                else gate = "정보 없음";
+                else destination = "정보 없음";
                 if(e.getElementsByTagName("airFln").getLength()>0)
                     flightID = e.getElementsByTagName("airFln").item(0).getTextContent();
-                else gate = "정보 없음";
+                else flightID = "정보 없음";
                 if(e.getElementsByTagName("airlineKorean").getLength()>0)
                     airLine = e.getElementsByTagName("airlineKorean").item(0).getTextContent();
-                else gate = "정보 없음";
+                else airLine = "정보 없음";
                 if(e.getElementsByTagName("gate").getLength()>0)
                     gate = e.getElementsByTagName("gate").item(0).getTextContent();
                 else gate = "정보 없음";
