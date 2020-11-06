@@ -19,7 +19,7 @@
     background-color: rgba(0, 0, 0, 0.01);
     content: '';
     display: block;
-    height: 100%;
+    height: 98%;
     position: absolute;
     width: 100%;
 }
@@ -29,7 +29,7 @@
     width: 100%;
     align-items: center;
     fill: rgba(255,255,255,0.5);
-    height: 600px;
+    height: 580px;
     z-index: 1;
 }
 #FIDS_table{
@@ -38,7 +38,7 @@
     top: 10%;
     left: 2%;
     background: rgba(31, 31, 187,1);
-    height: 560px;
+    height: 540px;
     align-items: center;
     z-index: 2;
 }

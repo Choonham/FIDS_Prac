@@ -17,13 +17,13 @@ public class IncheonAirport {
     private static final String ServiceKey = "7VDR5J%2Bou578BKJjc7Sx2zZapo4KWdDYheTbg%2BsNJgt%2FHMLGtWD1W6xAube0dHcQ2iUvTav81Hq09%2BXq3b8srw%3D%3D";
     private static final String url = "http://openapi.airport.co.kr/service/rest/FlightStatusList/getFlightStatusList?ServiceKey=";
     private static final String preAppended = "&pageNo=1&schStTime=";
-    private static final String afterAppended = "&schEdTime=2400&schAirCode=";
+    private static final String afterAppended = "&schEdTime=2400&schIOType=O&schAirCode=";
     String time = null;
     String destination = null;
     String flightID = null;
     String airLine = null;
     String gate = null;
-
+    String rmKor = null;
     HashMap<Integer, ArrayList<String>> FIDS_Info_Map = new HashMap<>();
     public HashMap<Integer, ArrayList<String>>  getFIDS(String AirportCode) {
         try {
@@ -54,11 +54,15 @@ public class IncheonAirport {
                 if(e.getElementsByTagName("gate").getLength()>0)
                     gate = e.getElementsByTagName("gate").item(0).getTextContent();
                 else gate = "정보 없음";
+                if(e.getElementsByTagName("rmkKor").getLength()>0)
+                    rmKor = e.getElementsByTagName("rmkKor").item(0).getTextContent();
+                else rmKor = "정보 없음";
                 FIDS_Info_AL.add(0, time);
                 FIDS_Info_AL.add(1, destination);
                 FIDS_Info_AL.add(2, flightID);
                 FIDS_Info_AL.add(3, airLine);
                 FIDS_Info_AL.add(4, gate);
+                FIDS_Info_AL.add(5, rmKor);
                 FIDS_Info_Map.put(i, FIDS_Info_AL);
             }
             return FIDS_Info_Map;
