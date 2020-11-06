@@ -132,9 +132,15 @@
                                 FIDS_Info_Map = Info.getFIDS("CJU");
                                 FIDS_Info_AL = FIDS_Info_Map.get(i);
                             }
+
+                    String time = FIDS_Info_AL.get(0);
+                    String hr= time.substring(0,2);
+                    String m=time.substring(2,4);
+
                     %>
+
                         <tr>
-                            <td id="departTime<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(0)%></td>
+                            <td id="departTime<%=i%>" <%=Class%>><%=hr%>시 <%=m%>분</td>
                             <td colspan="6" id="Destination<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(1)%></td>
                             <td id="FlightID<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(2)%></td>
                             <td id="AirLine<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(3)%></td>
