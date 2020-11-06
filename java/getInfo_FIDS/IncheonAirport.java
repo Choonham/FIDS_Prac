@@ -17,7 +17,7 @@ public class IncheonAirport {
     private static final String ServiceKey = "7VDR5J%2Bou578BKJjc7Sx2zZapo4KWdDYheTbg%2BsNJgt%2FHMLGtWD1W6xAube0dHcQ2iUvTav81Hq09%2BXq3b8srw%3D%3D";
     private static final String url = "http://openapi.airport.co.kr/service/rest/FlightStatusList/getFlightStatusList?ServiceKey=";
     private static final String preAppended = "&pageNo=1&schStTime=";
-    private static final String afterAppended = "&schEdTime=2400&schAirCode=CJU";
+    private static final String afterAppended = "&schEdTime=2400&schAirCode=";
     String time = null;
     String destination = null;
     String flightID = null;
@@ -25,9 +25,9 @@ public class IncheonAirport {
     String gate = null;
 
     HashMap<Integer, ArrayList<String>> FIDS_Info_Map = new HashMap<>();
-    public HashMap<Integer, ArrayList<String>>  getFIDS() {
+    public HashMap<Integer, ArrayList<String>>  getFIDS(String AirportCode) {
         try {
-            String URL = url + ServiceKey + preAppended + getCurrTime() + afterAppended;
+            String URL = url + ServiceKey + preAppended + getCurrTime() + afterAppended + AirportCode;
             DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
             Document doc = dBuilder.parse(URL);
@@ -35,6 +35,7 @@ public class IncheonAirport {
             Element e;
             NodeList parentNodelist;
             parentNodelist = doc.getElementsByTagName("item");
+
             for (int i = 0; i < parentNodelist.getLength(); i++) {
                 e = (Element) parentNodelist.item(i);
                 ArrayList<String> FIDS_Info_AL = new ArrayList<>();
@@ -65,8 +66,8 @@ public class IncheonAirport {
     }
 
     public static String getCurrTime(){
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("HHmm");
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("HHmm");
         String CurrTime = formatter.format(date);
         return CurrTime;
     }

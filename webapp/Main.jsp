@@ -30,7 +30,7 @@
             </nav>
         </div>
         <div class="col-8" id="MainTitle">
-            <a>FIDS MAIN PAGE</a>
+            <a>FIDS MAIN PAGE </a>
         </div>
         <div class="col-2" id="Clock">
             <div class="hour">
@@ -80,6 +80,7 @@
                     level: 13
                 };
                 var map = new kakao.maps.Map(container, options);
+
                 var positions = [
                     {
                         title: "1",

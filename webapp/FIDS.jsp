@@ -21,7 +21,7 @@
 </head>
 <%
     int AirportNo = 0;
-    if(request.getParameter("AirportNo") != null){
+        if(request.getParameter("AirportNo") != null){
         AirportNo = Integer.parseInt(request.getParameter("AirportNo"));
     }
     String title = null;
@@ -112,13 +112,27 @@
                     <%  String Class = null;
                         ArrayList<String> FIDS_Info_AL = new ArrayList<>();
                         HashMap<Integer, ArrayList<String>> FIDS_Info_Map = new HashMap<>();
-                        FIDS_Info_Map = Info.getFIDS();
+
                         for(int i = 0; i<=10; i++){
                             if(i%2==0) Class = "class=\"bg-primary\"";
                             else Class = null;
                             if(AirportNo == 4) {
+                                FIDS_Info_Map = Info.getFIDS("CJU");
                                 FIDS_Info_AL = FIDS_Info_Map.get(i);
-                                %>
+                            }
+                            else if(AirportNo == 3) {
+                                FIDS_Info_Map = Info.getFIDS("PUS");
+                                FIDS_Info_AL = FIDS_Info_Map.get(i);
+                            }
+                            else if(AirportNo == 2) {
+                                FIDS_Info_Map = Info.getFIDS("GMP");
+                                FIDS_Info_AL = FIDS_Info_Map.get(i);
+                            }
+                            else if(AirportNo == 1) {
+                                FIDS_Info_Map = Info.getFIDS("CJU");
+                                FIDS_Info_AL = FIDS_Info_Map.get(i);
+                            }
+                    %>
                         <tr>
                             <td id="departTime<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(0)%></td>
                             <td colspan="6" id="Destination<%=i%>" <%=Class%>><%=FIDS_Info_AL.get(1)%></td>
@@ -128,19 +142,8 @@
                             <td id="Status<%=i%>" <%=Class%>>ExData: <%=i%></td>
                             <td id="Delay<%=i%>" <%=Class%>>ExData: <%=i%></td>
                         </tr>
+
                     <%
-                            } else{
-                    %>
-                        <tr>
-                            <td id="departTime<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                            <td colspan="6" id="Destination<%=i%>" <%=Class%>>ExDestinationData: <%=i%></td>
-                            <td id="FlightID<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                            <td id="AirLine<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                            <td id="Gate<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                            <td id="Status<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                            <td id="Delay<%=i%>" <%=Class%>>ExData: <%=i%></td>
-                        </tr>
-                    <%}
                     }
                     %>
                     </tbody>
