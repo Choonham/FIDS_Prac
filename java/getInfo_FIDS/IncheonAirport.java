@@ -39,11 +39,21 @@ public class IncheonAirport {
             for (int i = 0; i < parentNodelist.getLength(); i++) {
                 e = (Element) parentNodelist.item(i);
                 ArrayList<String> FIDS_Info_AL = new ArrayList<>();
-                time = e.getElementsByTagName("std").item(0).getTextContent();
-                destination = e.getElementsByTagName("arrivedKor").item(0).getTextContent();
-                flightID = e.getElementsByTagName("airFln").item(0).getTextContent();
-                airLine = e.getElementsByTagName("airlineKorean").item(0).getTextContent();
-                gate = e.getElementsByTagName("gate").item(0).getTextContent();
+                if(e.getElementsByTagName("std").getLength()>0)
+                    time = e.getElementsByTagName("std").item(0).getTextContent();
+                else gate = "정보 없음";
+                if(e.getElementsByTagName("arrivedKor").getLength()>0)
+                    destination = e.getElementsByTagName("arrivedKor").item(0).getTextContent();
+                else gate = "정보 없음";
+                if(e.getElementsByTagName("airFln").getLength()>0)
+                    flightID = e.getElementsByTagName("airFln").item(0).getTextContent();
+                else gate = "정보 없음";
+                if(e.getElementsByTagName("airlineKorean").getLength()>0)
+                    airLine = e.getElementsByTagName("airlineKorean").item(0).getTextContent();
+                else gate = "정보 없음";
+                if(e.getElementsByTagName("gate").getLength()>0)
+                    gate = e.getElementsByTagName("gate").item(0).getTextContent();
+                else gate = "정보 없음";
                 FIDS_Info_AL.add(0, time);
                 FIDS_Info_AL.add(1, destination);
                 FIDS_Info_AL.add(2, flightID);
