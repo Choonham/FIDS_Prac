@@ -8,6 +8,7 @@
 <%@  page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import = "airport.airportNo" %>
 <%@ page import = "java.io.PrintWriter" %>
+<%@ page import ="getInfo_FIDS.IncheonAirport" %>
 <html>
 <head>
     <meta name="viewport" content="width=auto" initial-scale="1">
@@ -21,6 +22,9 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7cab8d5537c069ad77c3d51ea034a74a"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
 <div class="container-fluid">
+    <%
+        IncheonAirport Info = new IncheonAirport();
+    %>
     <div class="row justify-content-start">
         <div class="col-2">
             <nav class="navbar">
@@ -65,13 +69,33 @@
     <div class="row justify-content-center">
         <div class="col-6">
             <div id="map_text">
-                Map
+                MAP
             </div>
-            <svg width="100%" id="map">
-                <rect id="map_back" width="100%" height="800px">
+            <div id="digital_Clock">
+
+            </div>
+            <script type="text/javascript">
+                function showTime(){
+                    var date = new Date();
+                    var hour = date.getHours();
+                    var min = date.getMinutes();
+                    var time = null;
+                    if(hour < 10){
+                        hour = "0"+hour;
+                    }
+                    if(min < 10){
+                        min = "0" + min;
+                    }
+                    time = hour + "시" + min + "분";
+                    document.getElementById("digital_Clock").innerHTML = time;
+                }
+                setInterval(showTime, 1000);
+            </script>
+            <svg width="700px" id="map">
+                <rect id="map_back" width="700px" height="800px">
                 </rect>
             </svg>
-            <div id="mapApi" style="width:80%;height:730px; padding:10px; position: absolute; left: 10%; top:20px; z-index: 2"></div>
+            <div id="mapApi" style="width:680px;height:730px; padding:10px; position: absolute; left: 10px; top:20px; z-index: 2"></div>
             <% String AirportName = null; %>
             <script>
                 var container = document.getElementById('mapApi');

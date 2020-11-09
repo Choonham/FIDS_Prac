@@ -96,7 +96,25 @@
                             <th>
                                 <img src="img/DepartureIcon.jpg">
                             </th>
-                            <th colspan="11">Departure</th>
+                            <th colspan="6">Departure</th>
+                            <th colspan="5" id="table_time"></th>
+                            <script type="text/javascript">
+                                function showTime(){
+                                    var date = new Date();
+                                    var hour = date.getHours();
+                                    var min = date.getMinutes();
+                                    var time = null;
+                                    if(hour < 10){
+                                        hour = "0"+hour;
+                                    }
+                                    if(min < 10){
+                                        min = "0" + min;
+                                    }
+                                    time = hour + "시" + min + "분";
+                                    document.getElementById("table_time").innerHTML = time;
+                                }
+                                setInterval(showTime, 1000);
+                            </script>
                         </tr>
                         <tr style="color: #b8daff; text-align: center" >
                             <th>Time</th>
