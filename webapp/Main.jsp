@@ -8,7 +8,7 @@
 <%@  page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import = "airport.airportNo" %>
 <%@ page import = "java.io.PrintWriter" %>
-<%@ page import ="getInfo_FIDS.IncheonAirport" %>
+<%@ page import ="getInfo_FIDS.FIDSPAGE" %>
 <html>
 <head>
     <meta name="viewport" content="width=auto" initial-scale="1">
@@ -23,7 +23,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
 <div class="container-fluid">
     <%
-        IncheonAirport Info = new IncheonAirport();
+        FIDSPAGE Info = new FIDSPAGE();
     %>
     <div class="row justify-content-start">
         <div class="col-2">
@@ -168,19 +168,16 @@
                             Number.setAirportNo(No);
                             %>
                             window.location.href = "FIDS.jsp?AirportNo=<%=Number.getAirportNo()%>";
-
                         }
                     });
                     kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
                     kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-
                 }
                 function makeOverListener(map, marker, infowindow) {
                     return function() {
                         infowindow.open(map, marker);
                     };
                 }
-
                 // 인포윈도우를 닫는 클로저를 만드는 함수입니다
                 function makeOutListener(infowindow) {
                     return function() {

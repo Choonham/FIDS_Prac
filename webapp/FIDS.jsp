@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@  page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import = "getInfo_FIDS.IncheonAirport" %>
+<%@ page import = "getInfo_FIDS.FIDSPAGE" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 
@@ -37,7 +37,7 @@
             </nav>
         </div>
         <div class="col-8" id="MainTitle">
-            <%  IncheonAirport Info = new IncheonAirport();
+            <%  FIDSPAGE Info = new FIDSPAGE();
                 if(AirportNo == 1) {
                 title = "인천공항 FIDS";
             } else if(AirportNo == 2) {
@@ -167,7 +167,7 @@
                     }
                     %>
                     <script type="text/javascript">
-                        var manager_url = "Manager.jsp?AirportNo"+<%=AirportNo%>;
+                        var manager_url = "Manager.jsp?AirportNo="+<%=AirportNo%>;
                         $(document).keydown({param:manager_url},function (event) {
                             if (event.keyCode == '65') {
                                 $(document).keydown(function (event){

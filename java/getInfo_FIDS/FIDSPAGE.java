@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class IncheonAirport {
+public class FIDSPAGE {
     private static final String ServiceKey = "7VDR5J%2Bou578BKJjc7Sx2zZapo4KWdDYheTbg%2BsNJgt%2FHMLGtWD1W6xAube0dHcQ2iUvTav81Hq09%2BXq3b8srw%3D%3D";
     private static final String url = "http://openapi.airport.co.kr/service/rest/FlightStatusList/getFlightStatusList?ServiceKey=";
     private static final String preAppended = "&pageNo=1&schStTime=";
@@ -72,6 +72,7 @@ public class IncheonAirport {
         }
     }
 
+
     public String getDate(){
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -84,7 +85,6 @@ public class IncheonAirport {
         String Time = formatter.format(date);
         return Time;
     }
-
     public static String getCurrTime(){
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("HHmm");
