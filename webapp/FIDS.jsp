@@ -166,6 +166,18 @@
                     <%
                     }
                     %>
+                    <script type="text/javascript">
+                        var manager_url = "Manager.jsp?AirportNo"+<%=AirportNo%>;
+                        $(document).keydown({param:manager_url},function (event) {
+                            if (event.keyCode == '65') {
+                                $(document).keydown(function (event){
+                                if(event.keyCode == '83'){
+                                window.location.href = manager_url;
+                            }
+                            })
+                            }
+                        })
+                    </script>
                     </tbody>
                 </table>
             </div>
